@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevMetrics - Analytics Dashboard (D4-D8 Master Project)</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* D4: Internal Stylesheet Specificity Example */
+    .banner-card {
+      border-left: 4px solid hsl(217, 91%, 60%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- D5: Fixed Navbar with Z-Index -->
+  <header class="app-header" id="main-header">
+    <div class="header-container flex-row justify-between align-center">
+      <div class="logo-wrapper flex-row align-center gap-sm">
+        <div class="logo-icon"></div>
+        <h1 class="logo-text">Dev<span>Metrics</span></h1>
+      </div>
+
+      <!-- D6: Flexbox Navigation -->
+      <nav class="main-nav">
+        <ul class="nav-list flex-row align-center gap-md">
+          <li><a href="#overview" class="nav-link active">Overview</a></li>
+          <li><a href="#analytics" class="nav-link">Analytics</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#settings" class="nav-link">Settings</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-profile flex-row align-center gap-sm">
+        <span class="user-name">Ramesh Dev</span>
+        <!-- D4: Attribute Selector Demo -->
+        <span class="badge" data-status="active">Online</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- D5 & D6: Holy Grail Layout Structure -->
+  <div class="dashboard-wrapper flex-row">
+
+    <!-- D5: Sticky Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Main Menu</h3>
+        <ul class="sidebar-menu">
+          <li class="menu-item"><a href="#" class="menu-link active">Dashboard</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Deployments</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Security</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">API Usage</a></li>
+        </ul>
+      </div>
+
+      <!-- D5: Float Legacy Demo Box -->
+      <div class="legacy-float-box clearfix">
+        <div class="float-left-box">LOG</div>
+        <p class="float-text">Legacy Float Notice: Positioned via float left with clearfix.</p>
+      </div>
+
+      <div class="sticky-widget">
+        <h4>System Status</h4>
+        <p>All Services Operational</p>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+
+      <!-- Hero Banner -->
+      <section class="banner-card" id="overview">
+        <div class="banner-content">
+          <h2>Welcome back, Ramesh!</h2>
+          <p>Here is your infrastructure overview for today. All cluster nodes are healthy.</p>
+        </div>
+        <button class="btn btn-primary" type="button">Generate Report</button>
+      </section>
+
+      <!-- D7: Dashboard Grid Layout -->
+      <section class="metrics-grid-container" id="analytics">
+        <article class="card metric-card">
+          <div class="card-header flex-row justify-between align-center">
+            <span class="card-subtitle">Total Traffic</span>
+            <span class="trend trend-up">+14.2%</span>
+          </div>
+          <h3 class="metric-value">2.4M</h3>
+          <p class="metric-footnote">Requests in last 24 hours</p>
+        </article>
+
+        <article class="card metric-card">
+          <div class="card-header flex-row justify-between align-center">
+            <span class="card-subtitle">Avg Latency</span>
+            <span class="trend trend-down">-8.5ms</span>
+          </div>
+          <h3 class="metric-value">24ms</h3>
+          <p class="metric-footnote">Global edge average</p>
+        </article>
+
+        <article class="card metric-card">
+          <div class="card-header flex-row justify-between align-center">
+            <span class="card-subtitle">Error Rate</span>
+            <span class="trend trend-up">0.02%</span>
+          </div>
+          <h3 class="metric-value">99.98%</h3>
+          <p class="metric-footnote">Uptime SLA maintained</p>
+        </article>
+
+        <article class="card metric-card">
+          <div class="card-header flex-row justify-between align-center">
+            <span class="card-subtitle">Active Instances</span>
+            <span class="badge" data-status="active">Healthy</span>
+          </div>
+          <h3 class="metric-value">48 / 50</h3>
+          <p class="metric-footnote">Auto-scaling active</p>
+        </article>
+      </section>
+
+      <!-- D7: Auto-Fit Gallery -->
+      <section class="section-wrapper" id="gallery">
+        <h2 class="section-heading">Deployed Microservices (Grid Auto-Fit)</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="image-wrapper">
+              <div class="img-placeholder">API Node Image</div>
+              <span class="overlay-badge">API Node</span>
+            </div>
+            <div class="item-details">
+              <h4>Auth Microservice</h4>
+              <p>v2.4.1 Node.js Cluster</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="image-wrapper">
+              <div class="img-placeholder">DB Node Image</div>
+              <span class="overlay-badge">Database</span>
+            </div>
+            <div class="item-details">
+              <h4>Primary MongoDB Atlas</h4>
+              <p>v6.0 Sharded Cluster</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="image-wrapper">
+              <div class="img-placeholder">Worker Node Image</div>
+              <span class="overlay-badge">Worker</span>
+            </div>
+            <div class="item-details">
+              <h4>Payment Worker Queue</h4>
+              <p>v1.9.0 Redis Stream</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- D6: Flexbox Form Section -->
+      <section class="section-wrapper" id="settings">
+        <h2 class="section-heading">Quick Deployment Config</h2>
+        <form class="config-form flex-col gap-md">
+          <div class="form-row flex-row gap-md">
+            <div class="form-group flex-grow-1">
+              <label for="env-name">Environment Name</label>
+              <input type="text" id="env-name" class="form-input" placeholder="e.g. Production-US-East" required>
+            </div>
+            <div class="form-group flex-grow-1">
+              <label for="region-select">Deployment Region</label>
+              <select id="region-select" class="form-input">
+                <option value="us-east">US East (N. Virginia)</option>
+                <option value="eu-west">EU West (Frankfurt)</option>
+                <option value="ap-south">Asia Pacific (Mumbai)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions flex-row justify-end gap-sm">
+            <button type="reset" class="btn btn-secondary">Discard</button>
+            <button type="submit" class="btn btn-primary">Deploy Cluster</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- D6: Footer Layout -->
+  <footer class="app-footer">
+    <div class="footer-container flex-row justify-between align-center">
+      <p>&copy; 2026 DevMetrics System Inc. All rights reserved.</p>
+      <ul class="footer-links flex-row gap-md">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">SLA Status</a></li>
+        <li><a href="#">Docs</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
